@@ -131,7 +131,7 @@ public class SlimePotTask extends BukkitRunnable{
 
             Location loc = slimeItem.getLocation();
             Slime newSlime = (Slime)loc.getWorld().spawnEntity(loc, EntityType.SLIME, SpawnReason.CUSTOM);
-            newSlime.setSize(1);
+            newSlime.setSize(0);
         }
     }
 
@@ -148,7 +148,7 @@ public class SlimePotTask extends BukkitRunnable{
             ItemStack sugarStack = nearBySugar.get().getItemStack();
             sugarStack.setAmount(sugarStack.getAmount() - 1);
 
-            if(rng.nextDouble() < 1.0 / oldSize){
+            if(rng.nextDouble() < 1.0 / (oldSize + 1)){
                 slime.setSize(oldSize + 1);
             }
         }
