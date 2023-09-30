@@ -123,7 +123,7 @@ public class AxeListener implements Listener {
         Set<Block> floatingLeaves = FloatingBlocksHelpers.getConnectedFloatingBlocks(Collections.emptySet(), leaveWavefront, 
                 b -> leaveMaterials.contains(b.getType()),
                 AxeListener::isLeafSupportingBlock,
-                512);
+                2048);
         if(!floatingLeaves.isEmpty()){
             floatingLeaves.forEach(Block::breakNaturally);
         }
