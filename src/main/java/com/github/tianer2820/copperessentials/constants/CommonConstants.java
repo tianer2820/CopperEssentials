@@ -35,6 +35,9 @@ public class CommonConstants {
     public static final String ICE_BOMB_RECIPE = "ice_bomb_recipe";
     public static NamespacedKey ICE_BOMB_RECIPE_KEY = null;
 
+    public static final String GOLD_INGOT_RECIPE = "gold_ingot_recipe";
+    public static NamespacedKey GOLD_INGOT_RECIPE_KEY = null;
+
     public static void initializeConstants(Plugin plugin){
         ITEM_ID_KEY = new NamespacedKey(plugin, ITEM_ID);
         COPPER_PICKAXE_RECIPE_KEY = new NamespacedKey(plugin, COPPER_PICKAXE_RECIPE);
@@ -44,5 +47,6 @@ public class CommonConstants {
         COPPER_SWORD_RECIPE_KEY = new NamespacedKey(plugin, COPPER_SWORD_RECIPE);
         COPPER_NAME_TAG_RECIPE_KEY = new NamespacedKey(plugin, COPPER_NAME_TAG_RECIPE);
         ICE_BOMB_RECIPE_KEY = new NamespacedKey(plugin, ICE_BOMB_RECIPE);
+        GOLD_INGOT_RECIPE_KEY = new NamespacedKey(plugin, GOLD_INGOT_RECIPE);
     }
 }

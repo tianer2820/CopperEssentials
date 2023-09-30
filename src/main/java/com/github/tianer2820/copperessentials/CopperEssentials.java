@@ -138,5 +138,11 @@ public class CopperEssentials extends JavaPlugin implements Listener{
         recipe.setIngredient('G', Material.GUNPOWDER);
         getServer().addRecipe(recipe);
 
+        // craft gold with copper and yellow dye
+        shapelessRecipe = new ShapelessRecipe(CommonConstants.GOLD_INGOT_RECIPE_KEY, new ItemStack(Material.GOLD_INGOT));
+        shapelessRecipe.addIngredient(1, Material.YELLOW_DYE);
+        shapelessRecipe.addIngredient(1, Material.COPPER_INGOT);
+        getServer().addRecipe(shapelessRecipe);
+
     }
 }
