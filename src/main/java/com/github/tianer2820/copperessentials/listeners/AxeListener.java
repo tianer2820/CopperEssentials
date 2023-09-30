@@ -34,7 +34,10 @@ public class AxeListener implements Listener {
         Material.ACACIA_LOG,
         Material.CHERRY_LOG,
         Material.DARK_OAK_LOG,
-        Material.MANGROVE_LOG
+        Material.MANGROVE_LOG,
+        // "trees" in nether
+        Material.WARPED_STEM,
+        Material.CRIMSON_STEM
     );
     private static final Set<Material> leaveMaterials = ImmutableSet.of(
         Material.OAK_LEAVES,
@@ -46,7 +49,11 @@ public class AxeListener implements Listener {
         Material.DARK_OAK_LEAVES,
         Material.MANGROVE_LEAVES,
         Material.AZALEA_LEAVES,
-        Material.FLOWERING_AZALEA_LEAVES
+        Material.FLOWERING_AZALEA_LEAVES,
+        // "trees" in nether
+        Material.WARPED_WART_BLOCK,
+        Material.NETHER_WART_BLOCK,
+        Material.SHROOMLIGHT
     );
 
     // un-nest loops, make code more readable
@@ -126,6 +133,9 @@ public class AxeListener implements Listener {
         if(block.isLiquid() || block.isPassable() || block.isEmpty()){
             return false;
         }
+        if(!block.isSolid() || !block.isCollidable()){
+            return false;
+        }
         if(leaveMaterials.contains(block.getType()) || logMaterials.contains(block.getType())){
             return false;
         }
@@ -134,6 +144,9 @@ public class AxeListener implements Listener {
 
     private static boolean isLeafSupportingBlock(Block block){
         if(block.isLiquid() || block.isPassable() || block.isEmpty()){
+            return false;
+        }
+        if(!block.isSolid() || !block.isCollidable()){
             return false;
         }
         if(leaveMaterials.contains(block.getType())){
